@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multi Video Downloader</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #101114;
+            color: white;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 500px;
+            background: #1b1d22;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.4);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        input,
+        select {
+            border: 1px solid #333;
+            background: #101114;
+            color: white;
+        }
+
+        button {
+            border: 0;
+            background: #00c853;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: .9;
+        }
+
+        button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        #status {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 10px;
+            background: #111318;
+            color: #ccc;
+            display: none;
+            word-break: break-word;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📥 Video Downloader</h1>
+
+    <div class="subtitle">
+        Tempel tautan video dari platform yang didukung
+    </div>
+
+    <input
+        type="url"
+        id="url"
+        placeholder="https://..."
+        autocomplete="off"
+    >
+
+    <select id="format">
+        <option value="video">Video MP4</option>
+        <option value="audio">Audio MP3</option>
+    </select>
+
+    <button id="downloadBtn" onclick="downloadVideo()">
+        Download
+    </button>
+
+    <div id="status"></div>
+
+    <div class="info">
+        Gunakan hanya untuk konten yang kamu miliki atau
+        memang diizinkan untuk diunduh.
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
